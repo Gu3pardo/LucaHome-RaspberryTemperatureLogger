@@ -3,7 +3,7 @@
 # Jonas Schubert
 # GuepardoApps
 # guepardoapps@gmail.com
-# 1.0.1.161002
+# 1.0.4.170408
 
 import sqlite3
 import sys
@@ -11,8 +11,7 @@ import cgi
 import cgitb
 
 # global variabless
-#raspberryPlace = "Living Room"
-raspberryPlace = "Sleeping Room"
+raspberryPlace = "Workspace Jonas"
 dbname = '/var/www/templog.db'
 
 # print the HTTP header
@@ -79,7 +78,7 @@ def print_graph_script(table):
 # print the div that contains the graph
 def show_graph():
     print "<h2>Temperature Chart</h2>"
-    print '<div id="chart_div" style="width: 900px; height: 500px;"></div>'
+    print '<div id="chart_div" style="width: 1200px; height: 675px;"></div>'
 
 # connect to the db and show some stats
 # argument option is the number of hours
@@ -166,6 +165,11 @@ def print_time_selector(option):
         else:
             print "<option value=\"8064\">the last year</option>"
 
+        if option == "16128":
+            print "<option value=\"16128\" selected=\"selected\">the last two years</option>"
+        else:
+            print "<option value=\"16128\">the last two years</option>"
+
     else:
         print """<option value="6">the last 6 hours</option>
             <option value="12">the last 12 hours</option>
@@ -175,7 +179,8 @@ def print_time_selector(option):
             <option value="672">the last four weeks</option>
             <option value="2016">the last three month</option>
             <option value="4032">the last six month</option>
-            <option value="8064">the last year</option>"""
+            <option value="8064">the last year</option>
+            <option value="16128">the last two years</option>"""
 
     print """        </select>
         <input type="submit" value="Display">
@@ -187,7 +192,7 @@ def validate_input(option_str):
     # check that the option string represents a number
     if option_str.isalnum():
         # check that the option is within a specific range
-        if int(option_str) > 0 and int(option_str) <= 8064:
+        if int(option_str) > 0 and int(option_str) <= 16128:
             return option_str
         else:
             return None

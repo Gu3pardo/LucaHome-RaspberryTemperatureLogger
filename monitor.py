@@ -3,7 +3,7 @@
 # Jonas Schubert
 # GuepardoApps
 # guepardoapps@gmail.com
-# 1.0.1.161002
+# 1.0.4.170408
 
 import sqlite3
 
