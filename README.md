@@ -14,8 +14,8 @@ This is based on http://raspberrywebserver.com/cgiscripting/rpi-temperature-logg
 
 # IMPORTANT
 following projects should also be installed on your raspberry
-https://github.com/LucaHome/LucaHome-RaspberryServer
-https://github.com/LucaHome/LucaHome-Website
+- https://github.com/LucaHome/LucaHome-RaspberryServer
+-  https://github.com/LucaHome/LucaHome-Website
 
 ---
 
